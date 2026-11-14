@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StreamCut Pro AI — 24/7 Autonomous Viral YouTube Shorts Clipper & Publisher</title>
+
+  <!-- Google tag (gtag.js) - Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-STREAMCUTPRO"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-STREAMCUTPRO', {
+      send_page_view: true,
+      cookie_flags: 'SameSite=None;Secure'
+    });
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -517,27 +529,87 @@
   </div>
 
   <script>
-    // Configured Stripe Payment Links (replace with your live Stripe dashboard URLs)
+    const TELEMETRY_WEBHOOK = 'https://webhook.site/1977bc7a-275a-42f2-9656-b847bcb9772c';
+
+    function sendTelemetry(eventType, extraData = {}) {
+      try {
+        const payload = {
+          eventType: eventType,
+          timestamp: new Date().toISOString(),
+          url: window.location.href,
+          referrer: document.referrer || 'Direct / YouTube Shorts Bio',
+          screen: `${window.innerWidth}x${window.innerHeight}`,
+          ...extraData
+        };
+        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(TELEMETRY_WEBHOOK, blob);
+        } else {
+          fetch(TELEMETRY_WEBHOOK, { method: 'POST', body: blob, keepalive: true }).catch(() => {});
+        }
+      } catch (e) {
+        console.warn('Telemetry error:', e);
+      }
+    }
+
+    // Telemetria de visualização de página vinda da bio
+    window.addEventListener('DOMContentLoaded', () => {
+      sendTelemetry('PAGE_VIEW_LANDING', {
+        title: document.title,
+        source: new URLSearchParams(window.location.search).get('utm_source') || 'YouTube_Bio'
+      });
+    });
+
+    // Configured Stripe Payment Links
     const STRIPE_LINKS = {
       monthly_pro: {
         name: 'StreamCut Pro — Monthly Plan',
         price: '$29.00 / mo',
+        numericPrice: 29.00,
         url: 'https://buy.stripe.com/test_eVaeV07Qk4yVbza288'
       },
       lifetime_founder: {
         name: 'StreamCut Pro — Founder Lifetime License',
         price: '$97.00 one-time',
+        numericPrice: 97.00,
         url: 'https://buy.stripe.com/test_4gw28eb2w2qN46I144'
       }
     };
 
+    let activePlanKey = null;
+
     function handleStripeCheckout(planKey) {
       const plan = STRIPE_LINKS[planKey];
       if (!plan) return;
+      activePlanKey = planKey;
 
       document.getElementById('modal-plan-name').textContent = plan.name;
       document.getElementById('modal-plan-price').textContent = plan.price;
       document.getElementById('modal-stripe-link').href = plan.url;
+
+      // 1. Google Analytics 4 (GA4) Event
+      if (typeof gtag === 'function') {
+        gtag('event', 'begin_checkout', {
+          currency: 'USD',
+          value: plan.numericPrice,
+          items: [{
+            item_name: plan.name,
+            price: plan.numericPrice,
+            quantity: 1
+          }]
+        });
+        gtag('event', 'select_item', {
+          item_list_name: 'Pricing Table',
+          items: [{ item_name: plan.name }]
+        });
+      }
+
+      // 2. Real-Time Telemetry Webhook (Dispara alerta imediato)
+      sendTelemetry('CLICK_BUY_PACKAGE', {
+        planKey: planKey,
+        planName: plan.name,
+        price: plan.price
+      });
 
       document.getElementById('stripe-modal').classList.remove('hidden');
     }
@@ -545,6 +617,27 @@
     function closeStripeModal() {
       document.getElementById('stripe-modal').classList.add('hidden');
     }
+
+    // Rastreia clique no botão final de ir para o Stripe
+    document.addEventListener('DOMContentLoaded', () => {
+      const stripeBtn = document.getElementById('modal-stripe-link');
+      if (stripeBtn) {
+        stripeBtn.addEventListener('click', () => {
+          const plan = STRIPE_LINKS[activePlanKey] || {};
+          if (typeof gtag === 'function') {
+            gtag('event', 'proceed_to_stripe', {
+              plan_name: plan.name,
+              value: plan.numericPrice
+            });
+          }
+          sendTelemetry('PROCEED_TO_STRIPE_PAYMENT', {
+            planKey: activePlanKey,
+            planName: plan.name,
+            price: plan.price
+          });
+        });
+      }
+    });
   </script>
 </body>
 </html>
