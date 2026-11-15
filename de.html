@@ -489,9 +489,12 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      const p = new URLSearchParams(window.location.search);
       sendTelemetry('PAGE_VIEW_LANDING_DE', {
         title: document.title,
-        source: new URLSearchParams(window.location.search).get('utm_source') || 'YouTube_DE'
+        source: p.get('utm_source') || 'YouTube_DE',
+        medium: p.get('utm_medium') || 'direct',
+        campaign: p.get('utm_campaign') || 'none'
       });
     });
 
