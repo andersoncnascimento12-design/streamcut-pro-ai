@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamCut Pro AI — 24/7 Autonomer Twitch & Kick Clipper & YouTube Publisher</title>
+
+  <!-- Google tag (gtag.js) - Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-STREAMCUTPRO"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-STREAMCUTPRO', {
+      send_page_view: true,
+      cookie_flags: 'SameSite=None;Secure'
+    });
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#9333ea',
+              cyan: '#06b6d4',
+              neon: '#22d3ee',
+              dark: '#070b14',
+              card: '#0f172a',
+              border: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glow-cyan { box-shadow: 0 0 45px -5px rgba(6, 182, 212, 0.35); }
+    .glow-purple { box-shadow: 0 0 45px -5px rgba(147, 51, 234, 0.35); }
+    .gradient-text {
+      background: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#070b14] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-purple-950 via-cyan-950/60 to-purple-950 border-b border-cyan-500/20 py-2.5 px-4 text-center text-xs sm:text-sm font-medium tracking-wide">
+    <span class="inline-flex items-center gap-2">
+      <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
+      🚀 <b>LAUNCH-ANGEBOT:</b> Sichere dir 67% RABATT auf die Gründer-Lifetime-Lizenz für die ersten 100 Creator!
+    </span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#070b14]/85 border-b border-slate-800/80 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-cyan-500/20">
+          ⚡
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight">StreamCut <span class="gradient-text">Pro AI</span></span>
+          <span class="hidden sm:inline-block ml-2 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full">v2.4 Autopilot</span>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-cyan-400 transition">Funktionen</a>
+        <a href="#how-it-works" class="hover:text-cyan-400 transition">So funktioniert's</a>
+        <a href="#post-sale" class="hover:text-cyan-400 transition">Nach dem Kauf</a>
+        <a href="#pricing" class="hover:text-cyan-400 transition">Preise</a>
+        <a href="#faq" class="hover:text-cyan-400 transition">FAQ</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center rounded-lg border border-slate-700 bg-slate-900/90 text-xs font-bold overflow-hidden">
+          <a href="index.html?lang=en" class="px-2.5 py-1.5 text-slate-400 hover:text-white transition">EN</a>
+          <span class="px-2.5 py-1.5 bg-cyan-500/20 text-cyan-300">DE</span>
+        </div>
+        <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition duration-200">
+          Sofortzugang
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-20 pb-28 px-6 overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-purple-600/20 to-cyan-500/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs sm:text-sm text-slate-300 mb-8 shadow-inner">
+        <i class="fa-brands fa-twitch text-purple-400"></i>
+        <span>Autonomer Stream-Miner & YouTube Auto-Publisher (Twitch & Kick)</span>
+        <i class="fa-brands fa-youtube text-red-500 ml-1"></i>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6">
+        Verwandle Twitch & Kick Streams in <span class="gradient-text">virale YouTube-Videos & Shorts</span> — 24/7 Autopilot
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+        <b>StreamCut Pro AI</b> überwacht deutsche & internationale GTA RP- und Gaming-Streamer rund um die Uhr, erkennt die besten Reaktionen per Audio-KI, rendert gestochen scharfe 16:9-Compilations & 9:16-Shorts und lädt alles direkt auf YouTube hoch!
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:opacity-95 text-white font-bold text-lg shadow-2xl shadow-cyan-500/30 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+          <i class="fa-solid fa-bolt"></i>
+          Meinen Kanal jetzt automatisieren
+        </a>
+        <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-lg transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-play text-cyan-400 text-sm"></i>
+          Architektur ansehen
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-800/80">
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+          <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">+10.000</div>
+          <div class="text-xs text-slate-400 mt-1">Clips täglich analysiert</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+          <div class="text-2xl sm:text-3xl font-extrabold text-purple-400">24/7 Autopilot</div>
+          <div class="text-xs text-slate-400 mt-1">Ohne manuelle Arbeit</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+          <div class="text-2xl sm:text-3xl font-extrabold text-pink-400">16:9 & 9:16</div>
+          <div class="text-xs text-slate-400 mt-1">Longform & Shorts</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">6 Sek. Upload</div>
+          <div class="text-xs text-slate-400 mt-1">Offizielle YouTube API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section id="features" class="py-24 bg-[#090e1a] border-y border-slate-800/80 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Enterprise KI-Clipper</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Warum Top-Clip-Kanäle auf StreamCut Pro setzen</h3>
+        <p class="text-slate-400 mt-3">Speziell entwickelt für Creator, die skalierbare Faceless-YouTube-Kanäle aufbauen wollen.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-5 border border-cyan-500/20">
+            <i class="fa-solid fa-radar"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Autonomer Twitch & Kick Tracker</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Erkennt sofort, wenn Top-Streamer auf Twitch oder Kick live gehen, lädt High-Bitrate-Clips & VODs herunter und filtert exakt nach Spielkategorie (z. B. GTA RP).
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-5 border border-purple-500/20">
+            <i class="fa-solid fa-wave-square"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Akustischer KI-Filter</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Misst Lautstärke-Peaks (<code class="text-cyan-300">ebur128</code>), Lachen und Schreie. Sortiert stumme Ladescreens und langweilige Passagen automatisch aus.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-pink-500/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mb-5 border border-pink-500/20">
+            <i class="fa-solid fa-crop-simple"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Perfektes 9:16 & 16:9 Rendering</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Erstellt sowohl saubere 9:16-Shorts ohne doppelte Webcam als auch 90-Minuten-16:9-Compilations mit Kapiteln, Thumbnail und deutschem Outro.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-5 border border-emerald-500/20">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Offizieller YouTube Uploader</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Nutzt Googles offizielle YouTube Data API v3 für sekundenschnelle Uploads inklusive optimierter Titel, Tags und Timestamps.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-yellow-500/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mb-5 border border-yellow-500/20">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Integriertes Werbe-Outro</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Hängt automatisch ein konversionsstarkes Outro an jedes Video an und leitet Zuschauer direkt zu deinem Link in der Beschreibung oder Bio.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-5 border border-cyan-500/20">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">100% Lokal & Privat</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Läuft lokal auf deinem Windows-PC. Deine API-Keys und YouTube-Tokens verlassen niemals deinen Computer. Keine teuren Cloud-Server nötig.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS ARCHITECTURE -->
+  <section id="how-it-works" class="py-24 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Autonome Pipeline</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">In 4 Schritten zum Autopilot-Kanal</h3>
+        <p class="text-slate-400 mt-3">Einmal starten und rund um die Uhr hochkonvertierenden Traffic generieren.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-lg mb-4 border border-purple-500/20">01</div>
+          <h4 class="text-lg font-bold text-white mb-2">24/7 Live-Monitoring</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Überwacht Top-Streamer auf Twitch & Kick (z. B. xRohat, Shlorox, MontanaBlack88, Papaplatte) in Echtzeit.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg mb-4 border border-cyan-500/20">02</div>
+          <h4 class="text-lg font-bold text-white mb-2">Highlight-Erkennung</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Findet die reichweitenstärksten Clips und lautesten Reaktionsmomente automatisch.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-pink-500/40 transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold text-lg mb-4 border border-pink-500/20">03</div>
+          <h4 class="text-lg font-bold text-white mb-2">HD-Rendering</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Rendert gestochen scharfe 16:9-Videos (bis 90 Min.) oder 9:16-Shorts inklusive deutschem Outro.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg mb-4 border border-emerald-500/20">04</div>
+          <h4 class="text-lg font-bold text-white mb-2">YouTube-Export</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Erstellt fertige Titel, Beschreibungen, Kapitelmarken und Thumbnails für maximalen Umsatz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION (STRIPE INTEGRATED) -->
+  <section id="pricing" class="py-24 px-6 relative bg-[#090e1a] border-t border-slate-800/80">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Transparente Preise</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Wähle deinen Automatisierungs-Plan</h3>
+        <p class="text-slate-400 mt-3">100% sichere Zahlung über <b>Stripe</b>. Sofortiger Download und Lizenzaktivierung direkt nach dem Checkout.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- PLAN 1: MONTHLY PRO -->
+        <div class="rounded-3xl bg-slate-900/80 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-slate-800 text-xs font-semibold text-slate-300 mb-4">
+              Monatsabo
+            </div>
+            <h4 class="text-2xl font-bold text-white">StreamCut Pro</h4>
+            <p class="text-sm text-slate-400 mt-2">Ideal für Creator, die die Automatisierung auf einem neuen Kanal testen.</p>
+
+            <div class="mt-6 mb-8">
+              <span class="text-5xl font-black text-white">29 €</span>
+              <span class="text-slate-400 text-sm"> / Monat</span>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-300">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 24/7 Twitch & Kick Stream-Monitoring</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Akustischer KI-Highlight-Detektor</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Ultraschneller 16:9 & 9:16 Video-Renderer</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Direkter YouTube Data API v3 Auto-Uploader</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Lizenz für 1 YouTube-Kanal</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Standard-Support über Discord</li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <button onclick="handleStripeCheckout('monthly_pro')" class="w-full py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 font-bold text-white transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-stripe text-2xl"></i>
+              Pro abonnieren (29 €/Monat)
+            </button>
+            <p class="text-center text-[11px] text-slate-500 mt-2">Monatliche Abrechnung. Jederzeit mit 1 Klick kündbar.</p>
+          </div>
+        </div>
+
+        <!-- PLAN 2: LIFETIME FOUNDER (FEATURED) -->
+        <div class="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-[#0e1726] border-2 border-cyan-400 p-8 flex flex-col justify-between glow-cyan relative">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-md">
+            🔥 Bester Deal — Gründer-Angebot
+          </div>
+
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-semibold text-cyan-400 mb-4">
+              Lifetime-Lizenz
+            </div>
+            <h4 class="text-2xl font-bold text-white">Lifetime Founder</h4>
+            <p class="text-sm text-slate-400 mt-2">Einmalzahlung. Keine monatlichen Gebühren. Lebenslange Updates inklusive.</p>
+
+            <div class="mt-6 mb-8 flex items-baseline gap-2">
+              <span class="text-slate-500 line-through text-xl">297 €</span>
+              <span class="text-5xl font-black text-white">97 €</span>
+              <span class="text-cyan-400 text-xs font-bold uppercase">Einmalig</span>
+            </div>
+
+            <ul class="space-y-3.5 text-sm text-slate-300">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-star text-yellow-400"></i> <b>Alles aus Pro OHNE monatliche Kosten</b></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Unbegrenzte Streamer & Kanäle</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> KI-Facecam- & Bewegungs-Qualitätsfilter</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Integrierter Werbe-Outro-Generator</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Automatischer Titel-, Kapitel- & Hashtag-Generator</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Kostenlose Lifetime-Updates & TikTok-Beta</li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <button onclick="handleStripeCheckout('lifetime_founder')" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 font-extrabold text-white text-base shadow-lg shadow-cyan-500/25 transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-stripe text-2xl"></i>
+              Lifetime Founder sichern (97 €)
+            </button>
+            <p class="text-center text-[11px] text-slate-400 mt-2">7 Tage 100% Geld-zurück-Garantie. Ohne Wenn und Aber.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POST-SALE ONBOARDING GUIDE SECTION -->
+  <section id="post-sale" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3">Volle Transparenz</h2>
+        <h3 class="text-3xl font-extrabold text-white">Was passiert direkt nach dem Kauf?</h3>
+        <p class="text-slate-400 mt-3">In unter 3 Minuten installiert und startklar:</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex gap-5 items-start">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-black flex items-center justify-center shrink-0 border border-emerald-500/30 text-lg">1</div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Sofortiger Download-Link & Lizenzschlüssel per E-Mail</h4>
+            <p class="text-sm text-slate-400 mt-1 leading-relaxed">
+              Direkt nach Bestätigung durch Stripe erhältst du automatisch deinen persönlichen Lizenzschlüssel und den Download-Link für <code class="text-cyan-300">StreamCut_Pro_Setup.zip</code>.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex gap-5 items-start">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center shrink-0 border border-cyan-500/30 text-lg">2</div>
+          <div>
+            <h4 class="text-lg font-bold text-white">1-Klick-Start ohne komplexe Installation</h4>
+            <p class="text-sm text-slate-400 mt-1 leading-relaxed">
+              ZIP-Datei entpacken und <code class="text-cyan-300">START_STREAMCUT.bat</code> starten. FFmpeg und alle Video-Engines sind bereits integriert.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex gap-5 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 font-black flex items-center justify-center shrink-0 border border-purple-500/30 text-lg">3</div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Einmalige sichere YouTube OAuth-Verknüpfung</h4>
+            <p class="text-sm text-slate-400 mt-1 leading-relaxed">
+              Du autorisierst deinen YouTube-Kanal sicher über Google OAuth. Dein Token bleibt lokal verschlüsselt auf deinem PC.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-20 bg-[#090e1a] border-t border-slate-800/80 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Noch Fragen?</h2>
+        <h3 class="text-3xl font-extrabold text-white">Häufig gestellte Fragen (FAQ)</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <h4 class="text-base font-bold text-white">Brauche ich einen High-End-PC?</h4>
+          <p class="text-sm text-slate-400 mt-2">
+            Nein. StreamCut Pro läuft auf jedem modernen Windows 10/11 PC oder Laptop dank optimiertem Multi-Thread-Rendering.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <h4 class="text-base font-bold text-white">Funktioniert das mit Twitch UND Kick?</h4>
+          <p class="text-sm text-slate-400 mt-2">
+            Ja! Du kannst beliebige deutsche und internationale Streamer auf Twitch und Kick gleichzeitig überwachen und automatisch clippen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-slate-800/80 text-center text-xs text-slate-500 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-300">StreamCut Pro AI</span>
+        <span>• Alle Rechte vorbehalten.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#post-sale" class="hover:text-slate-300 transition">Nach dem Kauf</a>
+        <a href="#pricing" class="hover:text-slate-300 transition">Sicherer Stripe Checkout</a>
+        <a href="mailto:support@streamcutpro.com" class="hover:text-slate-300 transition">Technischer Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STRIPE CHECKOUT MODAL & HANDLER -->
+  <div id="stripe-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl">
+      <button onclick="closeStripeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+          <i class="fa-brands fa-stripe"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white" id="modal-plan-title">StreamCut Pro AI Checkout</h3>
+          <p class="text-xs text-slate-400">256-Bit SSL-verschlüsselte Zahlung</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 mb-6 text-sm text-slate-300">
+        <div class="flex justify-between items-center mb-2">
+          <span>Ausgewählter Plan:</span>
+          <b class="text-cyan-400" id="modal-plan-name">Lifetime Founder</b>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Gesamtbetrag:</span>
+          <b class="text-2xl font-black text-white" id="modal-plan-price">97,00 €</b>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+        Klicke unten, um zur offiziellen Stripe-Checkout-Seite zu gelangen (Kreditkarte, Apple Pay, Google Pay).
+      </p>
+
+      <div class="space-y-3">
+        <a id="modal-stripe-link" href="#" target="_blank" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 font-extrabold text-white text-center shadow-lg shadow-cyan-500/25 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-lock"></i>
+          Weiter zum sicheren Stripe Checkout
+        </a>
+        <button onclick="closeStripeModal()" class="w-full py-2.5 text-xs text-slate-400 hover:text-slate-200">
+          Abbrechen und zurück zur Seite
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TELEMETRY_WEBHOOK = 'https://webhook.site/1977bc7a-275a-42f2-9656-b847bcb9772c';
+
+    function sendTelemetry(eventType, extraData = {}) {
+      try {
+        const payload = {
+          eventType: eventType,
+          lang: 'de',
+          timestamp: new Date().toISOString(),
+          url: window.location.href,
+          referrer: document.referrer || 'Direct / YouTube DE',
+          screen: `${window.innerWidth}x${window.innerHeight}`,
+          ...extraData
+        };
+        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(TELEMETRY_WEBHOOK, blob);
+        } else {
+          fetch(TELEMETRY_WEBHOOK, { method: 'POST', body: blob, keepalive: true }).catch(() => {});
+        }
+      } catch (e) {
+        console.warn('Telemetry error:', e);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      sendTelemetry('PAGE_VIEW_LANDING_DE', {
+        title: document.title,
+        source: new URLSearchParams(window.location.search).get('utm_source') || 'YouTube_DE'
+      });
+    });
+
+    const STRIPE_LINKS = {
+      monthly_pro: {
+        name: 'StreamCut Pro — Monatsabo (DE)',
+        price: '29,00 € / Monat',
+        numericPrice: 29.00,
+        url: 'https://buy.stripe.com/6oU8wQfypdvj1E5a4q7ss0e?locale=de'
+      },
+      lifetime_founder: {
+        name: 'StreamCut Pro — Founder Lifetime-Lizenz (DE)',
+        price: '97,00 € einmalig',
+        numericPrice: 97.00,
+        url: 'https://buy.stripe.com/3cI00k0Dvaj7aaB7Wi7ss0d?locale=de'
+      }
+    };
+
+    let activePlanKey = null;
+
+    function handleStripeCheckout(planKey) {
+      const plan = STRIPE_LINKS[planKey];
+      if (!plan) return;
+      activePlanKey = planKey;
+
+      document.getElementById('modal-plan-name').textContent = plan.name;
+      document.getElementById('modal-plan-price').textContent = plan.price;
+      document.getElementById('modal-stripe-link').href = plan.url;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'begin_checkout', {
+          currency: 'EUR',
+          value: plan.numericPrice,
+          items: [{ item_name: plan.name, price: plan.numericPrice, quantity: 1 }]
+        });
+      }
+
+      sendTelemetry('CLICK_BUY_PACKAGE_DE', {
+        planKey: planKey,
+        planName: plan.name,
+        price: plan.price
+      });
+
+      document.getElementById('stripe-modal').classList.remove('hidden');
+    }
+
+    function closeStripeModal() {
+      document.getElementById('stripe-modal').classList.add('hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const stripeBtn = document.getElementById('modal-stripe-link');
+      if (stripeBtn) {
+        stripeBtn.addEventListener('click', () => {
+          const plan = STRIPE_LINKS[activePlanKey] || {};
+          if (typeof gtag === 'function') {
+            gtag('event', 'proceed_to_stripe', { plan_name: plan.name, value: plan.numericPrice });
+          }
+          sendTelemetry('PROCEED_TO_STRIPE_PAYMENT_DE', {
+            planKey: activePlanKey,
+            planName: plan.name,
+            price: plan.price
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

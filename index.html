@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var langParam = params.get('lang');
+      if (langParam === 'de' || (!langParam && (navigator.language || '').toLowerCase().startsWith('de'))) {
+        window.location.replace('de.html' + window.location.search);
+      }
+    })();
+  </script>
   <title>StreamCut Pro AI — 24/7 Autonomous Viral YouTube Shorts Clipper & Publisher</title>
 
   <!-- Google tag (gtag.js) - Google Analytics 4 (GA4) -->
@@ -91,9 +100,15 @@
         <a href="#pricing" class="hover:text-cyan-400 transition">Pricing</a>
         <a href="#faq" class="hover:text-cyan-400 transition">FAQ</a>
       </div>
-      <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition duration-200">
-        Get Instant Access
-      </a>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center rounded-lg border border-slate-700 bg-slate-900/90 text-xs font-bold overflow-hidden">
+          <span class="px-2.5 py-1.5 bg-cyan-500/20 text-cyan-300">EN</span>
+          <a href="de.html" class="px-2.5 py-1.5 text-slate-400 hover:text-white transition">DE</a>
+        </div>
+        <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition duration-200">
+          Get Instant Access
+        </a>
+      </div>
     </div>
   </nav>
 
